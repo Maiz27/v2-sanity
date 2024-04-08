@@ -1,6 +1,6 @@
 import {defineType, defineArrayMember} from 'sanity'
 
-export default defineType({
+export const jobDescription = defineType({
   title: 'Job Description',
   name: 'description',
   type: 'array',
