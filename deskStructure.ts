@@ -3,9 +3,11 @@ export const myStructure = (S: any) =>
     .title('Base')
     .items([
       // Add a single document to the first panel,
-      S.listItem().title('About Me').child(S.document().schemaType('about').documentId('about')),
+      S.listItem()
+        .title('About Me')
+        .child(S.document().schemaType('aboutMe').documentId('aboutMe')),
       // Removing singleton document types from the main document type list
       ...S.documentTypeListItems().filter(
-        (listItem: {getId: () => string}) => !['about'].includes(listItem.getId()),
+        (listItem: {getId: () => string}) => !['aboutMe'].includes(listItem.getId()),
       ),
     ])
