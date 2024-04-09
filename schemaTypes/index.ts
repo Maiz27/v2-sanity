@@ -1,4 +1,5 @@
 import about from './about'
+import faq from './faq'
 import experience from './experience'
 import project from './project'
 import tool from './tool'
@@ -11,6 +12,7 @@ import {projectImage} from './objects/projectImage'
 
 export const schemaTypes = [
   about,
+  faq,
   experience,
   project,
   tool,
