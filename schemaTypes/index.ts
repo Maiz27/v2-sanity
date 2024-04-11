@@ -9,6 +9,7 @@ import {duration} from './objects/duration'
 import {company} from './objects/company'
 import {jobDescription} from './objects/jobDescription'
 import {projectImage} from './objects/projectImage'
+import blockContent from './objects/blockContent'
 
 export const schemaTypes = [
   about,
@@ -21,4 +22,5 @@ export const schemaTypes = [
   company,
   jobDescription,
   projectImage,
+  blockContent,
 ]

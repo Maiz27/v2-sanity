@@ -7,9 +7,18 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Project Title',
+      title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
     }),
     defineField({
       name: 'featured',
@@ -19,7 +28,7 @@ export default defineType({
     }),
     defineField({
       name: 'status',
-      title: 'Project Status',
+      title: 'Status',
       type: 'string',
       options: {
         list: [
@@ -59,6 +68,18 @@ export default defineType({
       title: 'Images',
       type: 'array',
       of: [{type: 'projectImage'}],
+    }),
+    defineField({
+      name: 'contentTitle',
+      title: 'Content Title',
+      type: 'string',
+      description: 'The title of the blog of the project',
+    }),
+    defineField({
+      name: 'content',
+      title: 'Content',
+      type: 'blockContent',
+      description: 'The main blog content of the project',
     }),
   ],
   preview: {
