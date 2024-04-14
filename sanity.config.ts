@@ -22,6 +22,13 @@ export default defineConfig({
     codeInput({
       codeModes: [
         {
+          name: 'dart',
+          loader: () =>
+            import('@codemirror/lang-javascript').then(({javascript}) =>
+              javascript({jsx: false, typescript: true}),
+            ),
+        },
+        {
           name: 'typescript',
           loader: () =>
             import('@codemirror/lang-javascript').then(({javascript}) =>
@@ -47,6 +54,7 @@ export default defineConfig({
               ({javascriptLanguage}) => javascriptLanguage,
             ),
         },
+        {name: 'kotlin', loader: () => import('@codemirror/lang-java').then(({java}) => java())},
         {name: 'java', loader: () => import('@codemirror/lang-java').then(({java}) => java())},
         {
           name: 'yaml',
