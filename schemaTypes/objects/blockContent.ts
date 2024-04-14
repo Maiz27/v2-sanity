@@ -1,4 +1,5 @@
 import {defineType, defineArrayMember} from 'sanity'
+import codeBlock from './codeBlock'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -73,5 +74,7 @@ export default defineType({
       type: 'image',
       options: {hotspot: true},
     }),
+    // Custom Code Block
+    codeBlock,
   ],
 })
