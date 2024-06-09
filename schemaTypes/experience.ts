@@ -36,6 +36,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'tech',
+      title: 'Tech Stack',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'tool'}}],
+    }),
+    defineField({
       name: 'description',
       title: 'Job description',
       type: 'description',
