@@ -27,6 +27,12 @@ export default defineType({
       initialValue: false,
     }),
     defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'status',
       title: 'Status',
       type: 'string',
