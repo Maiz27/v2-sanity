@@ -28,3 +28,7 @@
 # Dotenv and similar local-only files
 *.local
 .env
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
