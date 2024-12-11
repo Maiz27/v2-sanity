@@ -6,6 +6,12 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'slug',
+      title: 'Page Slug',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'title',
       title: 'Page Title',
       type: 'string',
@@ -18,4 +24,16 @@ export default defineType({
       validation: (Rule) => Rule.required().max(170),
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      slug: 'slug',
+    },
+    prepare(selection: {title: string; slug: {current: string}}) {
+      const {title, slug} = selection
+      return {
+        title: `[${slug.current}] - ${title}`,
+      }
+    },
+  },
 })
