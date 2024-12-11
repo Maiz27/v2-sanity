@@ -32,7 +32,7 @@ export default defineType({
     prepare(selection: {title: string; slug: {current: string}}) {
       const {title, slug} = selection
       return {
-        title: `[${slug.current}] - ${title}`,
+        title: `${slug.current} - ${title}`,
       }
     },
   },
